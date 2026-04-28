@@ -15,9 +15,10 @@ alias lt='eza -a --tree --level=1 --icons'
 
 ##### Minhas alias #######
 
-alias update="sudo nixos-rebuild switch --flake /home/pc120/Meu-Nix_server#Nix"
+alias update="sudo nixos-rebuild boot --flake /home/pc120/Meu-Nix_server#Nix"
+alias updatef="nix flake update --flake /home/pc120/Meu-Nix_server"
+alias updateall="nix flake update --flake /home/pc120/Meu-Nix_server && sudo nixos-rebuild boot --flake /home/pc120/Meu-Nix_server#Nix"
 alias nixpush='git -C ~/Meu-Nix_server add -A && git -C ~/Meu-Nix_server commit -m "nixos update: $(date +%Y-%m-%d)" && git -C ~/Meu-Nix_server push'
-alias updatef="nix flake update"
 alias ff="fastfetch"
 alias vnc="vim Meu-Nix/hosts/Nix/config.nix"
 alias vnp="vim Meu-Nix/modules/packages.nix"
@@ -29,36 +30,10 @@ alias svim="sudo vim"
 alias cm="cmatrix"
 alias sr="reboot"
 alias ht="htop"
-alias flatpaku="flatpak update && flatpak upgrade"
 alias nl="sudo nix-env --list-generations --profile /nix/var/nix/profiles/system"
 alias ndn="sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations"
 alias nrc="sudo nix-env --profile /nix/var/nix/profiles/system --switch-generation"
 
-#youtube download
-alias baixarm="yt-dlp --extract-audio --audio-format mp3 "
-alias baixarv="yt-dlp -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio' --merge-output-format mp4"
-
-#ZSH_THEME="xiong-chiamiov-plus"
-
-#plugins=(
-#    git
-    #zsh-autosuggestions
-    #zsh-syntax-highlighting
-#)
-
-# Display Pokemon-colorscripts
-# Project page: https://gitlab.com/phoneybadger/pokemon-colorscripts#on-other-distros-and-macos
-#pokemon-colorscripts --no-title -s -r
-
-
-# Set-up FZF key bindings (CTRL R for fuzzy history finder)
-#source <(fzf --zsh)
-
-#HISTFILE=~/.zsh_history
-#HISTSIZE=10000
-#SAVEHIST=10000
-#setopt appendhistory
-#eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/powerlevel10k_modern.omp.json)"
 
 
 
